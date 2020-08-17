@@ -39,7 +39,7 @@ async fetchCustomerById({commit},id){
               redirect: 'follow'
               };
   
-              fetch(`http://localhost:8000/api/customers/${id}`, requestOptions)
+              fetch(`https://serene-plateau-70469.herokuapp.com/api/customers/${id}`, requestOptions)
               .then(response => response.json())
               .then(result => {
                 commit('CustomerById',result);
@@ -61,7 +61,7 @@ async fetchCustomerById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8000/api/customers/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/customers/", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllCustomers',result))
         .catch(error => console.log('error', error));
@@ -109,7 +109,7 @@ async fetchCustomerById({commit},id){
   redirect: 'follow'
   };
   
-  fetch("http://localhost:8000/api/customers", requestOptions)
+  fetch("https://serene-plateau-70469.herokuapp.com/api/customers", requestOptions)
   .then(response => response.json())
   .then(result => commit('AddCustomer',result))
   .catch(error => console.log('error', error));
@@ -154,7 +154,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/customers/${customer.id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/customers/${customer.id}`, requestOptions)
   .then(response => response.text())
   .then(result => commit('UpdateCustomer',result))
   .catch(error => console.log('error', error));
@@ -177,7 +177,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/customers/${id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/customers/${id}`, requestOptions)
   .then(response => response.json())
   .then(result => commit('DeleteCustomer',result))
   .catch(error => console.log('error', error));

@@ -36,7 +36,7 @@ async fetchArticleById({commit},id){
               redirect: 'follow'
               };
   
-              fetch(`http://localhost:8000/api/articles/${id}`, requestOptions)
+              fetch(`https://serene-plateau-70469.herokuapp.com/api/articles/${id}`, requestOptions)
               .then(response => response.json())
               .then(result => {
                 commit('ArticleById',result);
@@ -58,7 +58,7 @@ async fetchArticleById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8000/api/articles/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/articles/", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllArticles',result))
         .catch(error => console.log('error', error));
@@ -81,7 +81,7 @@ body: formdata,
 redirect: 'follow'
 };
 
-fetch("http://localhost:8000/api/articles", requestOptions)
+fetch("https://serene-plateau-70469.herokuapp.com/api/articles", requestOptions)
 .then(response => response.json())
 .then(result => commit('AddArticle',result))
 .catch(error => console.log('error', error));
@@ -108,7 +108,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/articles/${article.id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/articles/${article.id}`, requestOptions)
   .then(response => response.text())
   .then(result => commit('UpdateArticle',result))
   .catch(error => console.log('error', error));
@@ -131,7 +131,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/articles/${id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/articles/${id}`, requestOptions)
   .then(response => response.json())
   .then(result => commit('DeleteArticle',result))
   .catch(error => console.log('error', error));

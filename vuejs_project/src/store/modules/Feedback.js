@@ -35,7 +35,7 @@ async fetchFeedbackById({commit},id){
               redirect: 'follow'
               };
   
-              fetch(`http://localhost:8000/api/feedbacks/${id}`, requestOptions)
+              fetch(`https://serene-plateau-70469.herokuapp.com/api/feedbacks/${id}`, requestOptions)
               .then(response => response.json())
               .then(result => {
                 commit('FeedbackById',result);
@@ -57,7 +57,7 @@ async fetchFeedbackById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8000/api/feedbacks/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/feedbacks/", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllFeedbacks',result))
         .catch(error => console.log('error', error));
@@ -82,7 +82,7 @@ body: formdata,
 redirect: 'follow'
 };
 
-fetch("http://localhost:8000/api/feedbacks", requestOptions)
+fetch("https://serene-plateau-70469.herokuapp.com/api/feedbacks", requestOptions)
 .then(response => response.json())
 .then(result => commit('AddFeedback',result))
 .catch(error => console.log('error', error));
@@ -109,7 +109,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/feedbacks/${feedback.id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/feedbacks/${feedback.id}`, requestOptions)
   .then(response => response.text())
   .then(result => commit('UpdateFeedback',result))
   .catch(error => console.log('error', error));
@@ -132,7 +132,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/feedbacks/${id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/feedbacks/${id}`, requestOptions)
   .then(response => response.json())
   .then(result => commit('DeleteFeedback',result))
   .catch(error => console.log('error', error));

@@ -35,7 +35,7 @@ const actions= {
           redirect: 'follow'
         };
         
-        fetch("http://localhost:8000/api/register", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/register", requestOptions)
           .then(response => response.json())
           .then(result =>  {
               commit('registerMessage',result);
@@ -59,7 +59,7 @@ const actions= {
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8000/api/login", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/login", requestOptions)
         .then(response => response.json())
         .then(result =>  {
             commit('loginMessage',result);

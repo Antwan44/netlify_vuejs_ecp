@@ -41,7 +41,7 @@ const actions= {
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8000/api/users/me/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/users/me/", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchUser',result))
         .catch(error => console.log('error', error));
@@ -60,7 +60,7 @@ async fetchUserById({commit},id){
               redirect: 'follow'
               };
   
-              fetch(`http://localhost:8000/api/users/${id}`, requestOptions)
+              fetch(`https://serene-plateau-70469.herokuapp.com/api/users/${id}`, requestOptions)
               .then(response => response.json())
               .then(result => {
                 commit('UserById',result);
@@ -82,7 +82,7 @@ async fetchUserById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("http://localhost:8000/api/users/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/users/", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllUsers',result))
         .catch(error => console.log('error', error));
@@ -112,7 +112,7 @@ body: formdata,
 redirect: 'follow'
 };
 
-fetch("http://localhost:8000/api/users", requestOptions)
+fetch("https://serene-plateau-70469.herokuapp.com/api/users", requestOptions)
 .then(response => response.json())
 .then(result => commit('AddUser',result))
 .catch(error => console.log('error', error));
@@ -149,7 +149,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8000/api/users/${user.id}`, requestOptions)
+fetch(`https://serene-plateau-70469.herokuapp.com/api/users/${user.id}`, requestOptions)
   .then(response => response.text())
   .then(result => commit('UpdateUser',result))
   .catch(error => console.log('error', error));
@@ -174,7 +174,7 @@ fetch(`http://localhost:8000/api/users/${user.id}`, requestOptions)
       redirect: 'follow'
     };
     
-    fetch(`http://localhost:8000/api/users/${id}`, requestOptions)
+    fetch(`https://serene-plateau-70469.herokuapp.com/api/users/${id}`, requestOptions)
       .then(response => response.text())
       .then(result => commit('DeleteUser',result))
       .catch(error => console.log('error', error));
