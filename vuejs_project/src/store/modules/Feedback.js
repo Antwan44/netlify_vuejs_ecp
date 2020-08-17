@@ -57,7 +57,7 @@ async fetchFeedbackById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("https://serene-plateau-70469.herokuapp.com/api/feedbacks/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/feedbacks", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllFeedbacks',result))
         .catch(error => console.log('error', error));

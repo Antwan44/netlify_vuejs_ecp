@@ -58,7 +58,7 @@ async fetchArticleById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("https://serene-plateau-70469.herokuapp.com/api/articles/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/articles", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllArticles',result))
         .catch(error => console.log('error', error));

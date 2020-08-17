@@ -61,7 +61,7 @@ async fetchCustomerById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("https://serene-plateau-70469.herokuapp.com/api/customers/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/customers", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllCustomers',result))
         .catch(error => console.log('error', error));

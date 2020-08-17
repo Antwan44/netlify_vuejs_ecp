@@ -41,7 +41,7 @@ const actions= {
         redirect: 'follow'
         };
 
-        fetch("https://serene-plateau-70469.herokuapp.com/api/users/me/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/users/me", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchUser',result))
         .catch(error => console.log('error', error));
@@ -82,7 +82,7 @@ async fetchUserById({commit},id){
         redirect: 'follow'
         };
 
-        fetch("https://serene-plateau-70469.herokuapp.com/api/users/", requestOptions)
+        fetch("https://serene-plateau-70469.herokuapp.com/api/users", requestOptions)
         .then(response => response.json())
         .then(result => commit('fetchAllUsers',result))
         .catch(error => console.log('error', error));
