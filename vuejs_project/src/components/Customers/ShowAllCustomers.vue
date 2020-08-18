@@ -407,10 +407,12 @@
                     'special_note': this.special_note,
 
                 }
+                this.fetchAllCustomers();
                 this.addCustomer(obj);
                 this.fetchAllCustomers();
             },
             ondelete(id) {
+                this.fetchAllCustomers();
                 this.DeleteCustomer(id);
                 this.fetchAllCustomers();
             },
@@ -430,6 +432,7 @@
                     'birthday': customer.birthday,
                     'special_note': customer.special_note,
                 }
+                this.fetchAllCustomers();
                 this.updateCustomer(obj);
                 this.fetchAllCustomers();
 

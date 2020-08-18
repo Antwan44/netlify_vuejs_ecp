@@ -9,12 +9,11 @@
                             <div class="col-sm-6">
                                 <h2 class="titre-admin">Manage <b>Users</b></h2>
                             </div>
-<!--                             <div class="col-sm-6 mt-2">
-                                <button id="show-modal" class="btn btn-success mr-2" @click="showModal = true">+ Add New
-                                    Employee</button>
-                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"> <span>Delete
-                                        All</span></a>
-                            </div> -->
+                            <div class="col-sm-6 mt-2">
+
+<!--       <input type="text" class="search mb-3 pl-3" placeholder="Search" v-model="search">
+ -->
+                            </div>
                         </div>
                     </div>
                     <table class="table table-striped table-hover">
@@ -291,10 +290,12 @@
                     'hiring_day': this.hiring_day,
 
                 }
+                this.fetchAllUsers();
                 this.addUser(obj);
                 this.fetchAllUsers();
             },
             ondelete(id) {
+                this.fetchAllUsers();
                 this.DeleteUser(id);
                 this.fetchAllUsers();
             },
@@ -311,6 +312,7 @@
                     'birthday': User.birthday,
                     'hiring_day': User.hiring_day,
                 }
+                this.fetchAllUsers();
                 this.UpdateUser(obj);
                 this.fetchAllUsers();
 
@@ -320,6 +322,9 @@
         },
         computed: {
             ...mapGetters(['getAllUsers', 'infoUserById', 'getNewUser', 'getEraseUser', 'getEditUser']),
+/*             filteredUser(){
+        return this.getAllUsers.filter(user => user.firstname.toLowerCase().includes(this.search.toLowerCase()));
+      } */
         },
         created() {
             this.fetchAllUsers();

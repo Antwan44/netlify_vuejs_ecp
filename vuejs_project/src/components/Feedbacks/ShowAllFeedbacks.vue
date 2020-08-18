@@ -80,6 +80,7 @@
         methods: {
             ...mapActions(['fetchAllFeedbacks', 'fetchfeedback', 'DeleteFeedback']),
         ondelete(id) {
+                this.fetchAllFeedbacks();
                 this.DeleteFeedback(id);
                 this.fetchAllFeedbacks();
             },

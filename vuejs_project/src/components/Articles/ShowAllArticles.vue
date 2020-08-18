@@ -193,10 +193,12 @@
                     'description': this.description,
 
                 }
+                this.fetchAllArticles();
                 this.addArticle(obj);
                 this.fetchAllArticles();
             },
             ondelete(id) {
+                this.fetchAllArticles();
                 this.DeleteArticle(id);
                 this.fetchAllArticles();
             },
@@ -206,6 +208,7 @@
                     'title': article.title,
                     'description': article.description,
             }
+                this.fetchAllArticles();
                 this.updateArticle(obj);
                 this.fetchAllArticles();
 
@@ -218,7 +221,8 @@
         },
         created() {
             this.fetchAllArticles();
-        }
+        },
+        
 
 
     }
