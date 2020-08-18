@@ -148,7 +148,7 @@
         <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalEdit" @close="showModalEdit = false">
                 <div class="modal-mask">
-                    <div class="modal-wrapper ">
+                    <div class="modal-wrapper">
                         <div class="modal-container">
                             <form v-on:submit.prevent="oneditUser(userSelected)">
                                 <div class="well">
@@ -342,7 +342,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(6, 15, 25, 0.5);
         display: table;
         transition: opacity 0.3s ease;
     }
@@ -357,7 +357,7 @@
 
 
     .modal-container {
-        width: 600px;
+        width: 50%;
         margin: 0px auto;
         padding: 20px 30px;
         background-color: rgb(230, 230, 230);
