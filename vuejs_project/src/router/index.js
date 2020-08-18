@@ -47,14 +47,14 @@ Vue.use(VueRouter)
     path: '/adash',
     name: 'Admin',
     component: Admin,
-    meta:{requiresVisitor: true},
+    meta:{requiresVisitor: false},
 
 
   },  {
     path: '/udash',
     name: 'User',
     component: User,
-    meta:{requiresVisitor: true},
+    meta:{requiresVisitor: false},
 
 
   },

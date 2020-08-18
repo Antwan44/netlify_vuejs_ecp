@@ -24,7 +24,7 @@
                         <div class="modal-container">
                             <form @submit="onsubmit">
                                 <div class="well">
-                                    <h4>New Article</h4>
+                                    <h4>New Feedback</h4>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Feedback Topic"
                                             v-model="topic">
