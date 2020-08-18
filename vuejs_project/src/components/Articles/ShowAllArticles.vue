@@ -11,8 +11,6 @@
                             </div>
                             <div class="col-sm-6 mt-2">
                                 <button id="show-modal" class="btn btn-success mr-2" @click="showModal = true">+ Add New Article</button>
-                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"> <span>Delete
-                                        All</span></a>
                             </div>
                         </div>
                     </div>

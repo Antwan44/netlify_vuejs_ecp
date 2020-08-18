@@ -10,8 +10,7 @@
                                 <h2 class="titre-admin">Manage <b>Feedback</b></h2>
                             </div>
                             <div class="col-sm-6 mt-2">
-                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"> <span>Delete
-                                        All</span></a>
+
                             </div>
                         </div>
                     </div>
