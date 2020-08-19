@@ -32,7 +32,7 @@
                                     <td>
                                         <form>
                                             <input type="hidden" name="delete_id">
-                                            <button type="submit" class="delete btn btn-danger" @click.prevent="ondelete(feedback.id)"
+                                            <button type="submit" class="delete btn btn-delete" @click.prevent="ondelete(feedback.id)"
                                                 name="delete_data_btn"><svg width="1em" height="1em" viewBox="0 0 16 16"
                                                     class="bi bi-trash-fill" fill="currentColor"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
                                     <td>
                                         <form>
                                             <input type="hidden" name="show">
-                                            <button type="submit" class="edit btn btn-primary" name="show_btn"><svg
+                                            <button type="submit" class="edit btn btn-show" name="show_btn"><svg
                                                     width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill"
                                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -96,6 +96,30 @@
     }
 </script>
 
-<style>
+<style scoped>
+
+    .btn-delete{
+        background-color: #EFD6DE;
+    }
+    .btn-delete:hover{
+                background-color: #ecacc0;
+
+    }
+
+        .btn-modify{
+        background-color: #8F8F8F;
+    }
+    .btn-modify:hover{
+                background-color: #626262;
+
+    }
+
+        .btn-show{
+        background-color: #73b2ff;
+    }
+    .btn-show:hover{
+                background-color: #4d6d97;
+
+    }
 
 </style>

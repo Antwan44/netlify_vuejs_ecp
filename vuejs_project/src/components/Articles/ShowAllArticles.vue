@@ -10,7 +10,16 @@
                                 <h2 class="titre-admin">Manage <b>Articles</b></h2>
                             </div>
                             <div class="col-sm-6 mt-2">
-                                <button id="show-modal" class="btn btn-success mr-2" @click="showModal = true">+ Add New Article</button>
+                                <button id="show-modal" class="btn btn-show mr-2" @click="showModal = true"><svg
+                                        width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+                                        <path fill-rule="evenodd"
+                                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    </svg> Add New Article</button>
                             </div>
                         </div>
                     </div>
@@ -33,7 +42,7 @@
                                 <td>{{article.title}}</td>
                                 <td>{{article.description}}</td>
                                 <td>
-                                        <button class="delete btn btn-danger" @click.prevent="ondelete(article.id)"
+                                        <button class="delete btn btn-delete" @click.prevent="ondelete(article.id)"
                                             name="delete_data_btn">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16"
                                                 class="bi bi-trash-fill" fill="currentColor"
@@ -44,7 +53,7 @@
                                             </button>
                                 </td>
                                 <td>
-                                        <button class="edit btn btn-warning" name="modify_btn" @click="showModalEdit = true, articleSelected = article"><svg
+                                        <button class="edit btn btn-modify" name="modify_btn" @click="showModalEdit = true, articleSelected = article"><svg
                                                 width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil"
                                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
@@ -54,7 +63,7 @@
                                             </svg></button>
                                 </td>
                                 <td>
-                                        <button class="show btn btn-primary" name="show_btn" @click="showModalShow = true, articleSelected = article"><svg
+                                        <button class="show btn btn-show" name="show_btn" @click="showModalShow = true, articleSelected = article"><svg
                                                 width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill"
                                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -299,5 +308,29 @@
     .modal-leave-active .modal-container {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+    }
+
+        .btn-delete{
+        background-color: #EFD6DE;
+    }
+    .btn-delete:hover{
+                background-color: #ecacc0;
+
+    }
+
+        .btn-modify{
+        background-color: #8F8F8F;
+    }
+    .btn-modify:hover{
+                background-color: #626262;
+
+    }
+
+        .btn-show{
+        background-color: #73b2ff;
+    }
+    .btn-show:hover{
+                background-color: #4d6d97;
+
     }
 </style>

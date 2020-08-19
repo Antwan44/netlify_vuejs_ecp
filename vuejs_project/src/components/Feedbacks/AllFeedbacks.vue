@@ -1,7 +1,7 @@
 <template>
     <div class="ShowAllFeedbacks">
 
-<div class="card border-light mb-3" style="max-width: 18rem;">
+<div class="card border-light mr-5 mb-5">
               <div class="card-header">
     <h4>Employees Feedback</h4>
   </div>

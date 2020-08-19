@@ -1,12 +1,16 @@
 <template>
     <div class="ShowAllFeedbacks">
 
-        <div class="card border-light" style="max-width: 18rem;">
+        <div class="card border-light">
             <div class="card-header">
-                <h4>Feedback</h4>
+                <h4>Actions</h4>
             </div>
-            <button class="btn btn-success" @click="showModal = true">Send a Feedback</button>
-
+<ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action">
+                            <div @click="showModal = true"
+                                ><strong>Send a Feedback</strong></div>
+                        </li>
+</ul>
         </div>
 
 
@@ -176,4 +180,11 @@
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
+
+    .list-group-item{
+
+cursor: pointer;
+
+}
+
 </style>

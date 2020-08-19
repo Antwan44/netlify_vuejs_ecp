@@ -10,7 +10,7 @@
                                 <h2 class="titre-admin">Manage <b>Customers</b></h2>
                             </div>
                             <div class="col-sm-6 mt-2">
-                                <button id="show-modal" class="btn btn-success mr-2" @click="showModal = true"><svg
+                                <button id="show-modal" class="btn btn-show mr-2" @click="showModal = true"><svg
                                         width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
@@ -22,7 +22,7 @@
                                     </svg> Add New
                                     Customer</button>
 
-                                <button id="show-modal" class="btn btn-primary mr-2" @click="showModalMap = true"><svg
+                                <button id="show-modal" class="btn btn-modify mr-2" @click="showModalMap = true"><svg
                                         width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
@@ -50,7 +50,7 @@
                                 <td>{{customer.email}}</td>
                                 <td>{{customer.phone}}</td>
                                 <td>
-                                    <button type="submit" class="delete btn btn-danger"
+                                    <button type="submit" class="delete btn btn-delete"
                                         @click.prevent="ondelete(customer.id)" name="delete_data_btn"><svg width="1em"
                                             height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill"
                                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,7 @@
                                         </svg></button>
                                 </td>
                                 <td>
-                                    <button type="submit" class="edit btn btn-warning" name="modify_btn"
+                                    <button type="submit" class="edit btn btn-modify" name="modify_btn"
                                         @click="showModalEdit = true, customerSelected = customer"><svg width="1em"
                                             height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@
                                         </svg></button>
                                 </td>
                                 <td>
-                                    <button type="submit" class="show btn btn-primary" name="show_btn"
+                                    <button type="submit" class="show btn btn-show" name="show_btn"
                                         @click="showModalShow = true, customerSelected = customer"><svg width="1em"
                                             height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -309,7 +309,7 @@
                                 </div>
 
                                 <GmapMap  :center="{lat: 47, lng: -1}" :zoom="5" map-type-id="terrain"
-                                    style="width: 500px; height: 400px">
+                                    style="width: 100%; height: 400px">
                                     <GmapMarker v-for="customer in getAllCustomers.data" :key="customer.id"
                                         :position="{lat: parseFloat(customer.lat), lng: parseFloat(customer.lng)}"
                                         :clickable="true" :draggable="true" @click="activeCustomer=customer; infoWindowCustomerOpen = true"/>
@@ -533,5 +533,29 @@
     .modal-leave-active .modal-container {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+    }
+
+        .btn-delete{
+        background-color: #EFD6DE;
+    }
+    .btn-delete:hover{
+                background-color: #ecacc0;
+
+    }
+
+        .btn-modify{
+        background-color: #8F8F8F;
+    }
+    .btn-modify:hover{
+                background-color: #626262;
+
+    }
+
+        .btn-show{
+        background-color: #73b2ff;
+    }
+    .btn-show:hover{
+                background-color: #4d6d97;
+
     }
 </style>

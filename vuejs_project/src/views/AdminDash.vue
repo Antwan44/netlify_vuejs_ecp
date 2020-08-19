@@ -17,7 +17,7 @@
 </nav>
         <div class="row mt-5">
             <div class="col-sm-3">
-                <div class="card" v-for="user in getUser" :key="user.id">
+                <div class="card border-light ml-5" v-for="user in getUser" :key="user.id">
                     <div class="card-header">
                     <h3>{{user.firstname}} {{user.lastname}}</h3>
                     <p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         <div class="col-sm-6">
-            <div class="card">
+            <div class="card border-light">
                 <div v-show="user_toggle">
                     <ShowAllUsers />
                 </div>
@@ -146,7 +146,7 @@ cursor: pointer;
 }
 
 .admin{
-      background-color: #c5c5c5;
+      background-color: #d6d6d6;
 /*       height: 1000px;
       width: 100%; */
 

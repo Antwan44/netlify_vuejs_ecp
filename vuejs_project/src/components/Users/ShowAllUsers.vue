@@ -35,7 +35,7 @@
                                 <td>{{user.email}}</td>
                                 <td>{{user.phone}}</td>
                                 <td>
-                                        <button type="submit" class="delete btn btn-danger"
+                                        <button type="submit" class="delete btn btn-delete"
                                             @click.prevent="ondelete(user.id)" name="delete_data_btn"><svg width="1em"
                                                 height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill"
                                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
                                             </svg></button>
                                 </td>
                                 <td>
-                                        <button type="submit" class="edit btn btn-warning" name="modify_btn"
+                                        <button type="submit" class="edit btn btn-modify" name="modify_btn"
                                             @click="showModalEdit = true, userSelected = user"><svg width="1em"
                                                 height="1em" viewBox="0 0 16 16" class="bi bi-pencil"
                                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@
                                             </svg></button>
                                 </td>
                                 <td>
-                                        <button type="submit" class="edit btn btn-primary" name="show_btn"
+                                        <button type="submit" class="edit btn btn-show" name="show_btn"
                                             @click="showModalShow = true, userSelected = user"><svg width="1em"
                                                 height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill"
                                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -405,5 +405,29 @@
     .modal-leave-active .modal-container {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+    }
+
+    .btn-delete{
+        background-color: #EFD6DE;
+    }
+    .btn-delete:hover{
+                background-color: #ecacc0;
+
+    }
+
+        .btn-modify{
+        background-color: #8F8F8F;
+    }
+    .btn-modify:hover{
+                background-color: #626262;
+
+    }
+
+        .btn-show{
+        background-color: #73b2ff;
+    }
+    .btn-show:hover{
+                background-color: #4d6d97;
+
     }
 </style>

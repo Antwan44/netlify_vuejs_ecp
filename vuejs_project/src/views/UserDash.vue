@@ -78,5 +78,25 @@ export default {
 
 <style scoped>
 
+.navbar{
+  background-color: #10253F;
+  color: white;
+}
+
+.list-group-item{
+
+cursor: pointer;
+
+}
+
+.user{
+      background-color: #d6d6d6;
+/*       height: 1000px;
+      width: 100%; */
+
+}
+
+
+
 
 </style>
