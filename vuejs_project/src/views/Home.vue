@@ -27,7 +27,18 @@
 
 
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm" style="margin: auto;">
+      <div class="border-bottom border-white">
+      <h1 class="text-white">WELCOME</h1>
+      </div>
+            <div class="mt-3">
+      <h3 class="text-white">To the Majar Mage</h3>
+      </div>
 
+</div>
+    <div class="col-sm">
 
         <div class="column login p-5 pt-5 mb-5 mt-4" v-show="login_toggle">
         <div class="d-flex">
@@ -40,17 +51,23 @@
 <Register/>
         </div>
         </div>
+          </div>
+        </div>
+        </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-#10253F">
+
+<nav class="navbar navbar-expand-lg navbar-dark">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <a href="https://www.maryandjarvis.com/personal-assistant" class="btn btn-light button-card-info mr-2">See our HR Benefit</a>
-<a href="https://www.maryandjarvis.com/application" class="btn btn-light button-card-info mr-2">Apply For a Job</a>
-<a href="https://www.maryandjarvis.com/" class="btn btn-outline-light button-card-info">Visit our Website</a>
 
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="list-group">
+    <a href="https://www.maryandjarvis.com/personal-assistant" class="btn btn-light button-card-info m-2">See our HR Benefit</a>
+<a href="https://www.maryandjarvis.com/application" class="btn btn-light button-card-info m-2">Apply For a Job</a>
+<a href="https://www.maryandjarvis.com/" class="btn btn-outline-light button-card-info m-2">Visit our Website</a>
+    </div>
   </div>
 
 
