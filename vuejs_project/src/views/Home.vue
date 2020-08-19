@@ -29,7 +29,7 @@
 
 
 
-        <div class="column login p-5 pt-5" v-show="login_toggle">
+        <div class="column login p-5 pt-5 mb-5 mt-4" v-show="login_toggle">
         <div class="d-flex">
           <Login/>
         </div>
