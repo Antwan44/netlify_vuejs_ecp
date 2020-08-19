@@ -17,7 +17,7 @@
             class="btn btn-outline-light button-card-info mr-3">LOGIN</div></li>
       <li class="nav-item">
  <div @click="register_toggle = true, login_toggle = false"
-            class="btn btn-outline-light button-card-info mr-3">REGISTER</div>      </li>
+            class="btn btn-outline-light button-card-info mr-3">REGISTER</div></li>
     </ul>
   </div>
         <img src="/images/logocream/mjlogo.png" width="190" height="130" alt="" loading="lazy">
@@ -28,18 +28,33 @@
 
 
 
-        <div class="column login p-3 pt-3" v-show="login_toggle">
+
+        <div class="column login p-5 pt-5" v-show="login_toggle">
         <div class="d-flex">
           <Login/>
         </div>
         </div>
 
-        <div class="column register p-3 pt-3" v-show="register_toggle">
+        <div class="column register p-5 pt-5" v-show="register_toggle">
         <div class="d-flex">
 <Register/>
         </div>
         </div>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-#10253F">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <a href="https://www.maryandjarvis.com/personal-assistant" class="btn btn-light button-card-info mr-2">See our HR Benefit</a>
+<a href="https://www.maryandjarvis.com/application" class="btn btn-light button-card-info mr-2">Apply For a Job</a>
+<a href="https://www.maryandjarvis.com/" class="btn btn-outline-light button-card-info">Visit our Website</a>
+
+  </div>
+
+
+</nav>
 
 
 
@@ -73,6 +88,10 @@ export default {
 <style scoped>
 
 .navbar{
+  background-color: #10253F;
+}
+
+.home{
   background-color: #10253F;
 }
 

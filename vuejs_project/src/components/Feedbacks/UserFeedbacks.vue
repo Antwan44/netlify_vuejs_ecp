@@ -127,7 +127,7 @@
 
 
     .modal-container {
-        width: 600px;
+        width: 50%;
         margin: 0px auto;
         padding: 20px 30px;
         background-color: rgb(230, 230, 230);

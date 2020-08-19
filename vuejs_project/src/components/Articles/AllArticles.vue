@@ -3,7 +3,7 @@
 
 <div class="card border-light mb-3" style="max-width: 18rem;">
               <div class="card-header">
-    <h4>News Feed</h4>
+    <h4>Latest News</h4>
   </div>
             <ul class="list-group list-group-flush" v-for="article in getAllArticles.data" :key="article.id">
                 <li class="list-group-item">

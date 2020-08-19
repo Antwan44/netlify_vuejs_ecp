@@ -1,7 +1,20 @@
 <template>
   <div class='user'>
-      <h1>This is the User page</h1>
-      
+  <nav class="navbar navbar-expand-lg navbar-dark bg-#10253F" v-for="user in getUser" :key="user.id">
+  <a class="navbar-brand" href="/udash">
+          <img src="/images/logocream/mjsmall.png" width="55" height="55" alt="" loading="lazy">
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+<h4>Welcome {{user.firstname}} to your employee page.</h4>
+  </div>
+        <img src="/images/logocream/mjlogo.png" width="190" height="130" alt="" loading="lazy">
+
+
+</nav>
               <div class="row mt-5">
       <div class="col-sm-3">
          <div class="card" v-for="user in getUser" :key="user.id">
@@ -63,6 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 
 </style>
