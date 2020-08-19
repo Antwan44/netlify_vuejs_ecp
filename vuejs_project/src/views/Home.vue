@@ -28,13 +28,14 @@
 
 
 <div class="container-fluid">
+  <div class="grid">
   <div class="row">
     <div class="col-sm" style="margin: auto;">
       <div class="border-bottom border-white">
       <h1 class="text-white">WELCOME</h1>
       </div>
             <div class="mt-3">
-      <h3 class="text-white">To the Majar Mage</h3>
+      <h3 class="text-white">To the Majar Page</h3>
       </div>
 
 </div>
@@ -52,6 +53,7 @@
         </div>
         </div>
           </div>
+        </div>
         </div>
         </div>
 
@@ -110,6 +112,7 @@ export default {
 
 .home{
   background-color: #10253F;
+  min-height: 100vh;
 }
 
 </style>

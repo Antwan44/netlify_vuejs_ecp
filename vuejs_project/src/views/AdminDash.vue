@@ -30,20 +30,24 @@
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item list-group-item-action">
-                            <div @click="user_toggle = true, article_toggle = false, feedback_toggle = false, customer_toggle = false"
-                                ><strong>User Info</strong></div>
+                            <div @click="user_toggle = true, article_toggle = false, feedback_toggle = false, customer_toggle = false, task_toggle = false"
+                                ><strong>Users Info</strong></div>
                         </li>
                          <li class="list-group-item list-group-item-action">
-                            <div @click="customer_toggle = true, user_toggle = false, feedback_toggle = false, article_toggle = false"
-                                ><strong>Customer Info</strong></div>
+                            <div @click="customer_toggle = true, user_toggle = false, feedback_toggle = false, article_toggle = false, task_toggle = false"
+                                ><strong>Customers Info</strong></div>
                         </li>
                         <li class="list-group-item list-group-item-action">
-                            <div @click="article_toggle = true, user_toggle = false, feedback_toggle = false, customer_toggle = false"
-                                ><strong>Article Info</strong></div>
+                            <div @click="article_toggle = true, user_toggle = false, feedback_toggle = false, customer_toggle = false, task_toggle = false"
+                                ><strong>Articles Info</strong></div>
                         </li>
                         <li class="list-group-item list-group-item-action">
-                            <div @click="feedback_toggle = true, article_toggle = false, user_toggle = false, customer_toggle = false"
+                            <div @click="feedback_toggle = true, article_toggle = false, user_toggle = false, customer_toggle = false, task_toggle = false"
                                 ><strong>Feedback Info</strong></div>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+                            <div @click="task_toggle = true, article_toggle = false, user_toggle = false, customer_toggle = false, feedback_toggle = false"
+                                ><strong>Tasks Info</strong></div>
                         </li>
                         </ul>
                 </div>
@@ -61,6 +65,9 @@
                 </div>
                 <div v-show="feedback_toggle">
                     <ShowAllFeedbacks />
+                </div>
+                <div v-show="task_toggle">
+                    <ShowAllTasks />
                 </div>
             </div>
 
@@ -94,6 +101,8 @@
     import ShowAllCustomers from '@/components/Customers/ShowAllCustomers.vue'
     import AllArticles from '@/components/Articles/AllArticles.vue'
     import AllFeedbacks from '@/components/Feedbacks/AllFeedbacks.vue'
+    import ShowAllTasks from '@/components/Tasks/ShowAllTasks.vue'
+    
     import {
         mapGetters,
         mapActions,
@@ -107,6 +116,7 @@
                 article_toggle: false,
                 feedback_toggle: false,
                 customer_toggle: false,
+                task_toggle: false,
             }
         },
         components: {
@@ -115,7 +125,8 @@
             ShowAllFeedbacks,
             ShowAllCustomers,
             AllArticles,
-            AllFeedbacks
+            AllFeedbacks,
+            ShowAllTasks,
 
         },
         methods: {
@@ -141,6 +152,7 @@
 .navbar{
   background-color: #10253F;
   color: white;
+  
 }
 
 .list-group-item{
@@ -151,8 +163,8 @@ cursor: pointer;
 
 .admin{
       background-color: #d6d6d6;
-/*       height: 1000px;
-      width: 100%; */
+  min-height: 100vh;
+
 
 }
 

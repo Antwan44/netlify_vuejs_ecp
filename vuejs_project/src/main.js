@@ -11,7 +11,7 @@ router.beforeEach((to, from, next) => {
     if (isLogged) next()
     else{
       if(to.meta.requiresVisitor) next()
-      else next('/Login')
+      else next('/')
     }
 })
 
