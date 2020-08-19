@@ -1,7 +1,7 @@
 <template>
     <div class="ShowAllFeedbacks">
 
-<div class="card border-light mr-5 mb-5">
+<div class="card border-light m-3">
               <div class="card-header">
     <h4>Employees Feedback</h4>
   </div>

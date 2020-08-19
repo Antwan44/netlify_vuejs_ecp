@@ -1,7 +1,7 @@
 <template>
     <div class="ShowAllArticles">
 
-<div class="card border-light mr-5 mb-5">
+<div class="card border-light m-3">
               <div class="card-header">
     <h4>Latest News</h4>
   </div>
