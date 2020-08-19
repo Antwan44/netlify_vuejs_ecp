@@ -49,7 +49,7 @@
                 </div>
             </div>
         <div class="col-sm-6">
-            <div class="card border-light m-3">
+            <div class="card border-light m-1">
                 <div v-show="user_toggle">
                     <ShowAllUsers />
                 </div>
@@ -70,7 +70,11 @@
                 </div>
     </div>
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-3">
+    </div>
+        <div class="col-sm-6 mt-4">
+                      <img src="/images/logoblue/mjbluesmall.png" width="100px" height="100px" alt="" loading="lazy">
+
             </div>
 
 <div class="col-sm-3">

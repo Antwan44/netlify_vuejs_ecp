@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="images/signin-image.jpg" alt="sign up image"></figure>
+                        <figure><img class="img-fluid rounded img-thumbnail mt-4" src="images/startup.jpg" alt="sign up image"></figure>
                     </div>
 
                     <div class="signin-form">

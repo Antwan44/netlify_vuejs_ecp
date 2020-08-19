@@ -6,14 +6,14 @@
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <h2 class="titre-admin">Manage <b>Users</b></h2>
                             </div>
-                            <div class="col-sm-6 mt-2">
+                            <!-- <div class="col-sm-6 mt-2">
 
-<!--       <input type="text" class="search mb-3 pl-3" placeholder="Search" v-model="search">
- -->
-                            </div>
+      <input type="text" class="search mb-3 pl-3" placeholder="Search" v-model="search">
+
+                            </div> -->
                         </div>
                     </div>
                     <table class="table table-striped table-hover">

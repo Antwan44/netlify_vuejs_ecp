@@ -50,8 +50,10 @@
                             </div>
                         </form>
                     </div>
-                    <div class="signin-image">
-                        <figure><img src="images/signup-image.jpg" alt="sign up image"></figure>
+                    <div class="signup-image">
+                        <figure><img class="img-fluid rounded img-thumbnail" src="images/laptop.jpg" alt="sign up image"></figure>
+                        <figure><img class="img-fluid rounded img-thumbnail" src="images/morning.jpg" alt="sign up image"></figure>
+                        <figure><img class="img-fluid rounded img-thumbnail" src="images/interior.jpg" alt="sign up image"></figure>
                     </div>
                 </div>
             </div>
