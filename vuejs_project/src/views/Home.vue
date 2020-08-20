@@ -107,11 +107,11 @@ export default {
 <style scoped>
 
 .navbar{
-  background-color: #10253F;
+          background: linear-gradient(94deg,rgb(6, 15, 35),rgb(8, 17, 50),rgb(9, 19, 70),rgb(10, 20, 80));
 }
 
 .home{
-  background-color: #10253F;
+          background: linear-gradient(94deg,rgb(6, 15, 35),rgb(8, 17, 50),rgb(9, 19, 70),rgb(10, 20, 80));
   min-height: 100vh;
 }
 

@@ -157,8 +157,10 @@
 <style scoped>
 
 .navbar{
-  background-color: #10253F;
-  color: white;
+          background: linear-gradient(94deg,rgb(6, 15, 35),rgb(8, 17, 50),rgb(9, 19, 70),rgb(10, 20, 80));
+
+/*   background-color: #10253F;
+ */  color: white;
   
 }
 
@@ -169,9 +171,10 @@ cursor: pointer;
 }
 
 .admin{
-      background-color: #d6d6d6;
-  min-height: 100vh;
-
+/*       background: linear-gradient(94deg,rgba(255, 255, 255, 0.2),rgba(157, 235, 255, 0.2),rgba(88, 127, 255, 0.2),rgba(6, 15, 25, 0.3));
+ */  min-height: 100vh;
+background-color: #ffffff;
+background-image: linear-gradient(94deg, #8f8f8f54 0%, #10253f77 85%);
 
 }.btn-delete{
         background-color: #EFD6DE;
@@ -181,6 +184,7 @@ cursor: pointer;
         background-color: #ecacc0;
         transform: scale(1.1);
  }
+
 
 
 
