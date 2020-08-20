@@ -7,7 +7,8 @@ const state= {
     TaskById:[],
     NewTask: [],
     EraseTask: [],
-    EditTask: []
+    EditTask: [],
+    UserTasks: []
 
 }
 
@@ -18,7 +19,8 @@ const getters= {
     getAllTasks:(state)=> (state.tasks),
     getNewTask:(state)=> (state.NewTask),
     getEraseTask:(state)=> (state.EraseTask),
-    getEditTask:(state)=>(state.EditTask)
+    getEditTask:(state)=>(state.EditTask),
+    getUserTasks:(state)=>(state.UserTasks)
 }
 
 const actions= {
@@ -146,6 +148,27 @@ fetch(`https://serene-plateau-70469.herokuapp.com/api/tasks/${id}`, requestOptio
 },
 
 
+    //FETCH ALL TASKS FROM USER
+
+    async fetchUserTasks({commit}){
+      var myHeaders = new Headers();
+      myHeaders.append("Authorization", `Bearer ${token}`);
+
+      var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      
+      redirect: 'follow'
+      };
+
+      fetch("https://serene-plateau-70469.herokuapp.com/api/tasks/user", requestOptions)
+      .then(response => response.json())
+      .then(result => commit('fetchUserTasks',result))
+      .catch(error => console.log('error', error));
+          },
+
+
+
 }
 
 const mutations= {
@@ -155,7 +178,8 @@ fetchAllTasks:(state,tasks)=>(state.tasks = tasks),
 TaskById:(state,TaskById)=>(state.TaskById = TaskById),
 AddTask:(state,NewTask)=>(state.NewTask = NewTask),
 DeleteTask: (state,EraseTask)=>(state.EraseTask = EraseTask),
-UpdateTask: (state,EditTask)=>(state.EditTask = EditTask)
+UpdateTask: (state,EditTask)=>(state.EditTask = EditTask),
+fetchUserTasks: (state,UserTasks)=>(state.UserTasks = UserTasks)
 
 }
 

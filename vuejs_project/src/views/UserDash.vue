@@ -33,9 +33,10 @@
         </div>
         </div>
          <div class="col-sm-6">
+            <div class="card border-light m-1">
 
-           <h3>Here will be some info about tasks!
-           </h3>
+                    <ShowUserTasks />
+</div>
            </div>
 
 
@@ -43,13 +44,22 @@
                     <AllArticles />
                 </div>
               </div>
+
+<nav class="footbar navbar-expand-lg" v-for="user in getUser" :key="user.id">
+          <img src="/images/logoblue/mjbluesmall.png" width="100" height="100" alt="" loading="lazy">
+
+  
+
+</nav>
   </div>
 </template>
 
 <script>
 import UserFeedbacks from '@/components/Feedbacks/UserFeedbacks.vue'
 import AllArticles from '@/components/Articles/AllArticles.vue'
-    import {
+import ShowUserTasks from '@/components/Tasks/ShowUserTasks.vue'
+
+import {
         mapGetters,
         mapActions,
     } from 'vuex';
@@ -60,7 +70,8 @@ export default {
     components: {
 
             UserFeedbacks,
-            AllArticles
+            AllArticles,
+            ShowUserTasks
 
 
         },
