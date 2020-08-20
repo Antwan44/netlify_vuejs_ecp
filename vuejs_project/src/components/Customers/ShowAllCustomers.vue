@@ -275,7 +275,7 @@
 
                                 <GmapMap
                                     :center="{lat: parseFloat(customerSelected.lat), lng: parseFloat(customerSelected.lng)}"
-                                    :zoom="9" map-type-id="terrain" style="width: 500px; height: 300px">
+                                    :zoom="9" map-type-id="terrain" style="width: 100%; height: 300px">
                                     <GmapMarker
                                         :position="{lat: parseFloat(customerSelected.lat), lng: parseFloat(customerSelected.lng)}"
                                         :clickable="true" :draggable="true" @click="center=m.position" />
@@ -457,7 +457,6 @@
 <style scoped>
     #map {
         height: 700px;
-        /* The height is 400 pixels */
         width: 100%;
         /* The width is the width of the web page */
     }
@@ -476,26 +475,31 @@
 
 
 
-    .modal-wrapper {
-        display: table-cell;
-        vertical-align: middle;
-    }
+
 
 
 
     .modal-container {
-        width: 50%;
-        height:90%;
-
-        margin: 0px auto;
-        padding: 20px 30px;
+          position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 10%;
+  top: 10%;
+  width: 80%; /* Full width */
+  height: 80%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
         background-color: rgb(230, 230, 230);
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Helvetica, Arial, sans-serif; 
+
     }
 
+.modal-footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 
     .modal-header h3 {

@@ -85,7 +85,7 @@ export default {
 <style scoped>
 
 .navbar{
-  background-color: #10253F;
+          background: linear-gradient(94deg,rgb(6, 15, 35),rgb(8, 17, 50),rgb(9, 19, 70),rgb(10, 20, 80));
   color: white;
 }
 
@@ -96,8 +96,10 @@ cursor: pointer;
 }
 
 .user{
-      background-color: #d6d6d6;
-  min-height: 100vh;
+      min-height: 100vh;
+background-color: #ffffff;
+background-image: linear-gradient(94deg, #8f8f8f54 0%, #10253f77 85%);
+
 }
 
 .btn-delete{

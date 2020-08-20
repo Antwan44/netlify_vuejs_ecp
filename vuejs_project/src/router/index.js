@@ -47,7 +47,7 @@ Vue.use(VueRouter)
     path: '/adash',
     name: 'Admin',
     component: Admin,
-    meta:{requiresVisitor: false},
+    meta:{requiresVisitor: false, admin:false},
 
 
   },  {

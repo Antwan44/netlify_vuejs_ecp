@@ -145,7 +145,7 @@
 <!-- MODAL UPDATE
  -->
 
-<!-- 
+
  <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalEdit" @close="showModalEdit = false">
                 <div class="modal-mask">
@@ -155,13 +155,44 @@
                                 <div class="well">
                                     <h4>Edit Task</h4>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"
-                                            v-model="taskSelected.title">
+                                        <p class="form-text text-left">Service</p>
+                                        <select type="text" class="form-control"
+                                            v-model="taskSelected.service">
+                                            <option value="First Rendez-Vous">First Rendez-Vous</option>
+                                            <option value="Indoor Care">Indoor Care</option>
+                                            <option value="Essential Delivery">Essential Delivery</option>
+                                            <option value="Holiday Relief">Holiday Relief</option>
+                                            <option value="Miracle">Miracle</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"
-                                            v-model="taskSelected.description">
+                                        <p class="form-text text-left">Starting Date</p>
+                                        <input type="datetime-local" class="form-control"
+                                            v-model="taskSelected.start">
                                     </div>
+                                    <div class="form-group">
+                                        <p class="form-text text-left">Ending Date</p>
+                                        <input type="datetime-local" class="form-control"
+                                            v-model="taskSelected.end">
+                                    </div>
+
+
+                                     <div class="form-group">
+                                    <p class="form-text text-left">Employee</p>
+                                        <select type="text" class="form-control" placeholder="Employee"
+                                            v-model="taskSelected.employee_id">
+                                            <option :value="user.id" v-for="user in getAllUsers.user" :key="user.id">{{user.firstname}} {{user.lastname}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <p class="form-text text-left">Customer</p>
+                                        <select type="text" class="form-control" placeholder="Customer"
+                                            v-model="taskSelected.customer_id">
+                                            <option :value="customer.id" v-for="customer in getAllCustomers.data" :key="customer.id">{{customer.firstname}} {{customer.lastname}}</option>
+                                        </select>
+                                    </div>
+
+
 
                                     <div class="btn btn-danger mr-2" @click="showModalEdit = false">Close</div>
                                     <button type="submit" class="btn btn-primary" @click="showModalEdit = false"> Submit </button>
@@ -172,11 +203,10 @@
                      </div>
             </transition>
         </div>
- -->
+
 
 <!-- MODAL SHOW
  -->
-<!-- 
 
  <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalShow" @close="showModalShow = false">
@@ -210,7 +240,6 @@
             </transition>
         </div>
 
- -->
     </div>
 
 
@@ -306,25 +335,29 @@
 
 
 
-    .modal-wrapper {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
 
 
     .modal-container {
-        width: 50%;
-        height:90%;
-        margin: 0px auto;
-        padding: 20px 30px;
+          position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 10%;
+  top: 10%;
+  width: 80%; /* Full width */
+  height: 80%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
         background-color: rgb(230, 230, 230);
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Helvetica, Arial, sans-serif; 
+
     }
 
+.modal-footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 
     .modal-header h3 {

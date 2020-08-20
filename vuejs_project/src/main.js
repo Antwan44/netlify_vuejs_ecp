@@ -8,10 +8,16 @@ Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
   const isLogged = localStorage.getItem('token');
+  const isAdmin = localStorage.getItem('admin');
     if (isLogged) next()
     else{
       if(to.meta.requiresVisitor) next()
       else next('/')
+    }
+    if (isAdmin) next()
+    else{
+      if(to.meta.admin) next()
+      else next('/udash')
     }
 })
 
@@ -41,14 +47,6 @@ Vue.use(VueGoogleMaps, {
   installComponents: true
 })
 
-/* router.beforeEach((to, from, next) => {
-  const isLogged = localStorage.getItem('token');
-    if (isLogged) next()
-    else{
-      if(to.meta.requiresVisitor) next()
-      else next('/Login')
-    }
-}) */
 
 new Vue({
   router,

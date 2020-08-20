@@ -65,7 +65,13 @@ const actions= {
             commit('loginMessage',result);
             window.localStorage.setItem('token',result.success.token);
             if(!result.error){
+              if(result.user.admin_right != null){ 
               window.location.href="/adash";
+              window.localStorage.setItem('admin',1);
+               }
+              else{
+                window.location.href="/udash";
+              } 
             }
           })
         .catch(error => console.log('error', error));

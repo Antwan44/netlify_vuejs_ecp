@@ -28,9 +28,8 @@
 
 
 <div class="container-fluid">
-  <div class="grid">
-  <div class="row">
-    <div class="col-sm" style="margin: auto;">
+
+    <div class="col-sm mt-5" style="margin: auto;">
       <div class="border-bottom border-white">
       <h1 class="text-white">WELCOME</h1>
       </div>
@@ -54,8 +53,8 @@
         </div>
           </div>
         </div>
-        </div>
-        </div>
+      
+    
 
 
 <nav class="navbar navbar-expand-lg navbar-dark">

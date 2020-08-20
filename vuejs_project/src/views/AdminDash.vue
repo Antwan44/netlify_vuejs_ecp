@@ -1,5 +1,5 @@
 <template>
-    <div class='admin'>
+    <div class='admin' v-if="getUser.user.admin_right == 1">
   <nav class="navbar navbar-expand-lg navbar-dark bg-#10253F" v-for="user in getUser" :key="user.id">
   <a class="navbar-brand" href="/adash">
           <img src="/images/logocream/mjsmall.png" width="55" height="55" alt="" loading="lazy">
@@ -73,25 +73,35 @@
                     <ShowAllTasks />
                 </div>
             </div>
-
         </div>
                 <div class="col-sm-3">
                     <AllArticles />
+                    <br>
+                    <AllFeedbacks />
                 </div>
     </div>
-    <div class="row">
-        <div class="col-sm-3">
-    </div>
-        <div class="col-sm-6 mt-4">
+
+
+<nav class="footbar navbar-expand-lg" v-for="user in getUser" :key="user.id">
+          <img src="/images/logoblue/mjbluesmall.png" width="100" height="100" alt="" loading="lazy">
+
+  
+
+</nav>
+
+
+
+
+
+
+    <!-- <div class="row">
+        <div class="col-sm-12 mt-4">
                       <img src="/images/logoblue/mjbluesmall.png" width="100px" height="100px" alt="" loading="lazy">
 
-            </div>
-
-<div class="col-sm-3">
-        <AllFeedbacks />
+  
     </div>
 
-    </div>
+    </div> -->
 
     </div>
 
@@ -145,6 +155,8 @@
         },
         created() {
             this.fetchUser();
+      
+            
         }
 
 
@@ -185,7 +197,9 @@ background-image: linear-gradient(94deg, #8f8f8f54 0%, #10253f77 85%);
         transform: scale(1.1);
  }
 
-
+.footbar{
+    background-color: transparent;
+}
 
 
 
