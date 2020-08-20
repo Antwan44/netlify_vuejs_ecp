@@ -40,7 +40,7 @@
 
 
                                 <td>{{article.title}}</td>
-                                <td>{{article.description}}</td>
+                                <td v-html="article.description"></td>
                                 <td>
                                         <button class="delete btn btn-delete" @click.prevent="ondelete(article.id)"
                                             name="delete_data_btn">
@@ -126,10 +126,11 @@
                                         <input type="text" class="form-control"
                                             v-model="articleSelected.title">
                                     </div>
-                                    <div class="form-group">
+<!--                                     <div class="form-group">
                                         <input type="text" class="form-control"
                                             v-model="articleSelected.description">
-                                    </div>
+                                    </div> -->
+                                     <vue-editor v-model="articleSelected.description" />
 
                                     <div class="btn btn-danger mr-2" @click="showModalEdit = false">Close</div>
                                     <button type="submit" class="btn btn-primary" @click="showModalEdit = false"> Submit </button>
@@ -153,7 +154,7 @@
                         <div class="modal-container">
                                 <div class="well">
                                    <h4>{{ articleSelected.title}}</h4>
-                                    <h6>{{ articleSelected.description}}</h6>
+                                    <h6 v-html="articleSelected.description"></h6>
 
 <div class="modal-footer">
                                     <div class="btn btn-danger mr-2" @click="showModalShow = false">Close</div>
