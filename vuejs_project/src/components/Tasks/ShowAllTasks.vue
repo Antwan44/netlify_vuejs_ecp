@@ -115,7 +115,7 @@
                                     <div class="form-group">
                                     <p class="form-text text-left">Special Note</p>
                                         <input type="text" class="form-control" placeholder="Special Note"
-                                            v-model="end">
+                                            v-model="special_note">
                                     </div>
                                     <div class="form-group">
                                     <p class="form-text text-left">Employee</p>
