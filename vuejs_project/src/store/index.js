@@ -5,6 +5,8 @@ import User from './modules/User.js'
 import Article from './modules/Article.js'
 import Feedback from './modules/Feedback.js'
 import Customer from './modules/Customer.js'
+import Task from './modules/Task.js'
+
 
 Vue.use(Vuex)
 
@@ -14,6 +16,7 @@ export default new Vuex.Store({
     User,
     Article,
     Feedback,
-    Customer
+    Customer,
+    Task
   }
 })

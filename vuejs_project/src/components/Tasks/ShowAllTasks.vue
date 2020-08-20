@@ -36,7 +36,7 @@
                         </thead>
                         <tbody>
 
-                            <tr v-for="task in getAllTasks.data" :key="task.id">
+                            <tr v-for="task in getAllTasks" :key="task.id">
 
 
                                 <td>{{task.service}}</td>
@@ -82,24 +82,55 @@
 
 
 <!-- MODAL ADD
- --><!-- 
+ -->
         <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModal" @close="showModal = false">
                 <div class="modal-mask">
                     <div class="modal-wrapper ">
                         <div class="modal-container">
                             <form @submit="onsubmit">
-                                <div class="well">
+                                <div class="well" >
                                     <h4>New Task</h4>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Service"
-                                            v-model="title">
+                                    <p class="form-text text-left">Service</p>
+                                        <select type="text" class="form-control" placeholder="Service"
+                                            v-model="service">
+                                            <option value="First Rendez-Vous">First Rendez-Vous</option>
+                                            <option value="Indoor Care">Indoor Care</option>
+                                            <option value="Essential Delivery">Essential Delivery</option>
+                                            <option value="Holiday Relief">Holiday Relief</option>
+                                            <option value="Miracle">Miracle</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Write Your Small task"
-                                            v-model="description">
+                                 <p class="form-text text-left">Starting Date</p>
+                                        <input type="datetime-local" class="form-control"
+                                            v-model="start">
                                     </div>
-
+                                    <div class="form-group">
+                                   <p class="form-text text-left">Ending Date</p>
+                                        <input type="datetime-local" class="form-control"
+                                            v-model="end">
+                                    </div>
+                                    <div class="form-group">
+                                    <p class="form-text text-left">Special Note</p>
+                                        <input type="text" class="form-control" placeholder="Special Note"
+                                            v-model="end">
+                                    </div>
+                                    <div class="form-group">
+                                    <p class="form-text text-left">Employee</p>
+                                        <select type="text" class="form-control" placeholder="Employee"
+                                            v-model="employee_id">
+                                            <option :value="user.id" v-for="user in getAllUsers.user" :key="user.id">{{user.firstname}} {{user.lastname}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <p class="form-text text-left">Customer</p>
+                                        <select type="text" class="form-control" placeholder="Customer"
+                                            v-model="customer_id">
+                                            <option :value="customer.id" v-for="customer in getAllCustomers.data" :key="customer.id">{{customer.firstname}} {{customer.lastname}}</option>
+                                        </select>
+                                    </div>
                                     <div class="btn btn-danger mr-2" @click="showModal = false">Close</div>
                                     <button type="submit" class="btn btn-primary" @click="showModal = false"> Submit </button>
                                 </div>
@@ -110,7 +141,7 @@
             </transition>
         </div>
 
- -->
+
 <!-- MODAL UPDATE
  -->
 
@@ -141,11 +172,11 @@
                      </div>
             </transition>
         </div>
-
  -->
+
 <!-- MODAL SHOW
  -->
-
+<!-- 
 
  <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalShow" @close="showModalShow = false">
@@ -179,7 +210,7 @@
             </transition>
         </div>
 
-
+ -->
     </div>
 
 
@@ -249,7 +280,7 @@
 
         },
         computed: {
-            ...mapGetters(['getAllTasks', 'infoTaskById', 'getNewTask', 'getEraseTask', 'getEditTask']),
+            ...mapGetters(['getAllTasks', 'infoTaskById', 'getNewTask', 'getEraseTask', 'getEditTask','getAllCustomers' ,'getAllUsers']),
         },
         created() {
             this.fetchAllTasks();
