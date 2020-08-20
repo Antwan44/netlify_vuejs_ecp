@@ -7,7 +7,7 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h2 class="titre-admin">See your <b>Tasks</b></h2>
+                                <h2 class="titre-admin">Your <b>Tasks</b></h2>
                             </div>
                         </div>
                     </div>

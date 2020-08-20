@@ -297,6 +297,7 @@
                     'service': task.service,
                     'start': task.start,
                     'end': task.end,
+                    'special_note': task.special_note,
                     'customer_id': task.customer_id,
                     'employee_id': task.employee_id,
             }
