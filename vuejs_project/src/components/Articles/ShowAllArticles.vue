@@ -93,10 +93,11 @@
                                         <input type="text" class="form-control" placeholder="Article title"
                                             v-model="title">
                                     </div>
-                                    <div class="form-group">
+<!--                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Write Your Small Article"
                                             v-model="description">
-                                    </div>
+                                    </div> -->
+                                        <vue-editor v-model="description" />
 
                                     <div class="btn btn-danger mr-2" @click="showModal = false">Close</div>
                                     <button type="submit" class="btn btn-primary" @click="showModal = false"> Submit </button>
@@ -176,6 +177,7 @@
 </template>
 
 <script>
+import { VueEditor } from "vue2-editor";
     import {
         mapGetters,
         mapActions,
@@ -183,6 +185,7 @@
 
     export default {
         name: "ShowAllArticles",
+        components: { VueEditor },
         data() {
             return {
                 title: '',

@@ -24,7 +24,7 @@ const getters= {
 const actions= {
 
 
-// FETCH task BY ID
+// FETCH TASK BY ID
 async fetchTaskById({commit},id){
               var myHeaders = new Headers();
               myHeaders.append("Authorization", `Bearer ${token}`);
@@ -46,7 +46,7 @@ async fetchTaskById({commit},id){
                   },
 
 
-    //FETCH ALL ARTCILES
+    //FETCH ALL TASKS
  async fetchAllTasks({commit}){
         var myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${token}`);
@@ -64,7 +64,7 @@ async fetchTaskById({commit},id){
         .catch(error => console.log('error', error));
             },
 
-    //ADD AN TASK
+    //ADD A TASK
     async addTask({commit}, obj){
 
         var myHeaders = new Headers();
@@ -92,7 +92,7 @@ fetch("https://serene-plateau-70469.herokuapp.com/api/tasks", requestOptions)
 },
 
 
-    //UPDATE AN task
+    //UPDATE A TASK
 
     async updateTask({commit}, task){
 
@@ -152,10 +152,10 @@ const mutations= {
 
 
 fetchAllTasks:(state,tasks)=>(state.tasks = tasks),
-TaskById:(state,taskById)=>(state.taskById = taskById),
-AddTask:(state,Newtask)=>(state.Newtask = Newtask),
-DeleteTask: (state,Erasetask)=>(state.Erasetask = Erasetask),
-UpdateTask: (state,Edittask)=>(state.Edittask = Edittask)
+TaskById:(state,TaskById)=>(state.TaskById = TaskById),
+AddTask:(state,NewTask)=>(state.NewTask = NewTask),
+DeleteTask: (state,EraseTask)=>(state.EraseTask = EraseTask),
+UpdateTask: (state,EditTask)=>(state.EditTask = EditTask)
 
 }
 

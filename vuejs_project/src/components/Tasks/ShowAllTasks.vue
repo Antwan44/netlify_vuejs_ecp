@@ -39,8 +39,7 @@
                             <tr v-for="task in getAllTasks.data" :key="task.id">
 
 
-
-                                <td>{{task.title}}</td>
+                                <td>{{task.service}}</td>
                                 <td>{{task.user.firstname}}<br>{{task.user.lastname}}</td>
                                 <td>{{task.customer.firstname}}<br>{{task.customer.lastname}}</td>
                                 
@@ -198,8 +197,12 @@
         name: "ShowAllTasks",
         data() {
             return {
-                title: '',
-                description: '',
+                service: '',
+                start: '',
+                end: '',
+                special_note: '',
+                customer_id: '',
+                employee_id: '',
                 showModal: false,
                 showModalEdit: false,
                 showModalShow: false,
@@ -208,22 +211,26 @@
         },
         methods: {
             ...mapActions(['fetchAllTasks', 'TaskById', 'addTask', 'DeleteTask', 'updateTask']),
-            onsubmit(e) {
+             onsubmit(e) {
                 e.preventDefault();
                 var obj = {
-                    'title': this.title,
-                    'description': this.description,
+                    'service': this.service,
+                    'start': this.start,
+                    'end': this.end,
+                    'special_note': this.special_note,
+                    'customer_id': this.customer_id,
+                    'employee_id': this.employee_id,
 
                 }
                 this.fetchAllTasks();
                 this.addTask(obj);
                 this.fetchAllTasks();
-            },
+            }, 
             ondelete(id) {
                 this.fetchAllTasks();
                 this.DeleteTask(id);
                 this.fetchAllTasks();
-            },
+            }, 
             oneditTask(task){
                  var obj = {
                     'id': task.id,
@@ -237,8 +244,8 @@
                 this.updateTask(obj);
                 this.fetchAllTasks();
 
-
-            }
+ 
+            } 
 
         },
         computed: {

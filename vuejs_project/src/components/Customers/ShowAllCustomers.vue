@@ -385,7 +385,6 @@
                 customerSelected: '',
                 infoWindowCustomerOpen: false,
                 activeCustomer: {},
-
             }
         },
 

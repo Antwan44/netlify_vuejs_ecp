@@ -7,7 +7,7 @@
   </div>
             <ul class="list-group list-group-flush" v-for="article in getAllArticles.data" :key="article.id">
                 <li class="list-group-item">
-                    <h6>{{article.title}}</h6><p><small>{{article.description}}</small></p>
+                    <h6>{{article.title}}</h6><p v-html="article.description"></p>
                 </li>
             </ul>
         </div>
