@@ -7,7 +7,7 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h2 class="titre-admin">Manage <b>Feedback</b></h2>
+                                <h2 class="titre-admin">Manage Feedback</h2>
                             </div>
                             <div class="col-sm-6 mt-2">
 
@@ -203,27 +203,35 @@
         transform: scale(1.1);
     }
 
-    .btn-delete{
+ .btn-delete{
         background-color: #EFD6DE;
+        transition: transform .3s;
     }
-    .btn-delete:hover{
-                background-color: #ecacc0;
-
-    }
+.btn-delete:hover{
+        background-color: #ecacc0;
+        transform: scale(1.1);
+ }
 
         .btn-modify{
         background-color: #8F8F8F;
+                transition: transform .3s;
+
     }
     .btn-modify:hover{
                 background-color: #626262;
+        transform: scale(1.1);
 
     }
 
         .btn-show{
         background-color: #73b2ff;
+                        transition: transform .3s;
+
     }
+    
     .btn-show:hover{
                 background-color: #4d6d97;
+        transform: scale(1.1);
 
     }
 

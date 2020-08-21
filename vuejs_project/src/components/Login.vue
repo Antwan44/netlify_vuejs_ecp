@@ -19,6 +19,9 @@
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" v-model="password" name="your_pass" id="your_pass" placeholder="Password"/>
                             </div>
+                            <div v-if="getLogin.success == false" class="alert alert-danger" role="alert">
+                                    {{getLogin.error.message}}
+                            </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                             </div>

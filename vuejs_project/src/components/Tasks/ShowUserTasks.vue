@@ -7,7 +7,7 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h2 class="titre-admin">Your <b>Tasks</b></h2>
+                                <h2 class="titre-admin">Your Tasks</h2>
                             </div>
                         </div>
                     </div>
@@ -211,21 +211,8 @@
         transform: scale(1.1);
     }
 
-        .btn-delete{
-        background-color: #EFD6DE;
-    }
-    .btn-delete:hover{
-                background-color: #ecacc0;
 
-    }
 
-        .btn-modify{
-        background-color: #8F8F8F;
-    }
-    .btn-modify:hover{
-                background-color: #626262;
-
-    }
 
         .btn-show{
         background-color: #73b2ff;

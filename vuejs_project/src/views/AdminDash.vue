@@ -32,23 +32,23 @@
 </div>
 
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">
+                        <li class="list-group-item list-group-item-action list-group-item-light">
                             <div @click="user_toggle = true, article_toggle = false, feedback_toggle = false, customer_toggle = false, task_toggle = false"
                                 ><strong>Users Info</strong></div>
                         </li>
-                         <li class="list-group-item list-group-item-action">
+                         <li class="list-group-item list-group-item-action list-group-item-light">
                             <div @click="customer_toggle = true, user_toggle = false, feedback_toggle = false, article_toggle = false, task_toggle = false"
                                 ><strong>Customers Info</strong></div>
                         </li>
-                        <li class="list-group-item list-group-item-action">
+                        <li class="list-group-item list-group-item-action list-group-item-light">
                             <div @click="article_toggle = true, user_toggle = false, feedback_toggle = false, customer_toggle = false, task_toggle = false"
                                 ><strong>Articles Info</strong></div>
                         </li>
-                        <li class="list-group-item list-group-item-action">
+                        <li class="list-group-item list-group-item-action list-group-item-light">
                             <div @click="feedback_toggle = true, article_toggle = false, user_toggle = false, customer_toggle = false, task_toggle = false"
                                 ><strong>Feedback Info</strong></div>
                         </li>
-                        <li class="list-group-item list-group-item-action">
+                        <li class="list-group-item list-group-item-action list-group-item-light">
                             <div @click="task_toggle = true, article_toggle = false, user_toggle = false, customer_toggle = false, feedback_toggle = false"
                                 ><strong>Tasks Info</strong></div>
                         </li>
