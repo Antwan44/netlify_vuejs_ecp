@@ -183,12 +183,12 @@ cursor: pointer;
 }
 
 .admin{
-/*       background: linear-gradient(94deg,rgba(255, 255, 255, 0.2),rgba(157, 235, 255, 0.2),rgba(88, 127, 255, 0.2),rgba(6, 15, 25, 0.3));
- */  min-height: 100vh;
+ min-height: 100vh;
 background-color: #ffffff;
 background-image: linear-gradient(94deg, #8f8f8f54 0%, #10253f77 85%);
+}
 
-}.btn-delete{
+.btn-delete{
         background-color: #EFD6DE;
         transition: transform .3s;
     }

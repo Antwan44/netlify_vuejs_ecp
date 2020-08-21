@@ -72,6 +72,14 @@
                                         <br>
                                         {{taskSelected.user.phone}}
                                     </h6>
+                                <GmapMap
+                                    :center="{lat: parseFloat(taskSelected.customer.lat), lng: parseFloat(taskSelected.customer.lng)}"
+                                    :zoom="12" map-type-id="terrain" style="width: 100%; height: 300px">
+                                    <GmapMarker
+                                        :position="{lat: parseFloat(taskSelected.customer.lat), lng: parseFloat(taskSelected.customer.lng)}"
+                                        :clickable="true" :draggable="true" @click="center=m.position" />
+                                </GmapMap>
+
 <div class="modal-footer">
                                     <div class="btn btn-danger mr-2" @click="showModalShow = false">Close</div>
                                 </div>
