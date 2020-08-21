@@ -5,19 +5,12 @@
             <div class="card-header">
                 <h4>Actions</h4>
             </div>
-<ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">
-                            <div @click="showModal = true"
-                                ><strong>Send a Feedback</strong></div>
-                        </li>
-</ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-action">
+                    <div @click="showModal = true"><strong>Send a Feedback</strong></div>
+                </li>
+            </ul>
         </div>
-
-
-
-
-
-
 
         <!-- MODAL ADD
  -->
@@ -49,22 +42,7 @@
             </transition>
         </div>
 
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
 
 
 
@@ -95,7 +73,7 @@
                 }
                 this.AddFeedback(obj);
 
-},
+            },
 
         },
         computed: {
@@ -181,10 +159,9 @@
         transform: scale(1.1);
     }
 
-    .list-group-item{
+    .list-group-item {
 
-cursor: pointer;
+        cursor: pointer;
 
-}
-
+    }
 </style>

@@ -272,7 +272,6 @@
                                     {{ customerSelected.zip_code}} {{ customerSelected.city}}</h6>
                                 <h6>Best route to the door: {{ customerSelected.route_to_door}}</h6>
                                 <h6>Special note: {{ customerSelected.special_note}}</h6>
-
                                 <GmapMap
                                     :center="{lat: parseFloat(customerSelected.lat), lng: parseFloat(customerSelected.lng)}"
                                     :zoom="9" map-type-id="terrain" style="width: 100%; height: 300px">
@@ -280,8 +279,6 @@
                                         :position="{lat: parseFloat(customerSelected.lat), lng: parseFloat(customerSelected.lng)}"
                                         :clickable="true" :draggable="true" @click="center=m.position" />
                                 </GmapMap>
-
-
                                 <div class="modal-footer">
                                     <div class="btn btn-danger mr-2" @click="showModalShow = false">Close</div>
                                 </div>
@@ -305,36 +302,47 @@
                         <div class="modal-container">
                             <div class="well">
                                 <div class="modal-header">
-                                <h3>All Customers</h3>
+                                    <h3>All Customers</h3>
                                 </div>
-
-                                <GmapMap  :center="{lat: 47, lng: -1}" :zoom="5" map-type-id="terrain"
+                                <GmapMap :center="{lat: 47, lng: -1}" :zoom="5" map-type-id="terrain"
                                     style="width: 100%; height: 400px">
                                     <GmapMarker v-for="customer in getAllCustomers.data" :key="customer.id"
                                         :position="{lat: parseFloat(customer.lat), lng: parseFloat(customer.lng)}"
-                                        :clickable="true" :draggable="true" @click="activeCustomer=customer; infoWindowCustomerOpen = true"/>
+                                        :clickable="true" :draggable="true"
+                                        @click="activeCustomer=customer; infoWindowCustomerOpen = true" />
 
-                                    <gmap-info-window 
-                                     :position="{lat: parseFloat(activeCustomer.lat), lng: parseFloat(activeCustomer.lng)}"
-                                     :opened="infoWindowCustomerOpen"
-                                     @closeclick="activeCustomer = {}; infoWindowCustomerOpen = false">
-                                     <div class="card bg-light mb-3">
-                                         <div class="card-header">{{activeCustomer.firstname}} {{activeCustomer.lastname}}</div>
-                                         <p class="card-text"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
-  <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-</svg> {{activeCustomer.street_number}} {{activeCustomer.street_name}}<br>{{activeCustomer.zip_code}} {{activeCustomer.city}}</p>
-                                         <p class="card-text"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M3.925 1.745a.636.636 0 0 0-.951-.059l-.97.97c-.453.453-.62 1.095-.421 1.658A16.47 16.47 0 0 0 5.49 10.51a16.471 16.471 0 0 0 6.196 3.907c.563.198 1.205.032 1.658-.421l.97-.97a.636.636 0 0 0-.06-.951l-2.162-1.682a.636.636 0 0 0-.544-.115l-2.052.513a1.636 1.636 0 0 1-1.554-.43L5.64 8.058a1.636 1.636 0 0 1-.43-1.554l.513-2.052a.636.636 0 0 0-.115-.544L3.925 1.745zM2.267.98a1.636 1.636 0 0 1 2.448.153l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
-</svg> {{activeCustomer.phone}}</p>
-                                         <p class="card-text"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-</svg> {{activeCustomer.email}}</p>
-                                     </div>
-                                     </gmap-info-window>
+                                    <gmap-info-window
+                                        :position="{lat: parseFloat(activeCustomer.lat), lng: parseFloat(activeCustomer.lng)}"
+                                        :opened="infoWindowCustomerOpen"
+                                        @closeclick="activeCustomer = {}; infoWindowCustomerOpen = false">
+                                        <div class="card bg-light mb-3">
+                                            <div class="card-header">{{activeCustomer.firstname}}
+                                                {{activeCustomer.lastname}}</div>
+                                            <p class="card-text"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                    class="bi bi-house-door" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                                </svg> {{activeCustomer.street_number}}
+                                                {{activeCustomer.street_name}}<br>{{activeCustomer.zip_code}}
+                                                {{activeCustomer.city}}</p>
+                                            <p class="card-text"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                    class="bi bi-telephone" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M3.925 1.745a.636.636 0 0 0-.951-.059l-.97.97c-.453.453-.62 1.095-.421 1.658A16.47 16.47 0 0 0 5.49 10.51a16.471 16.471 0 0 0 6.196 3.907c.563.198 1.205.032 1.658-.421l.97-.97a.636.636 0 0 0-.06-.951l-2.162-1.682a.636.636 0 0 0-.544-.115l-2.052.513a1.636 1.636 0 0 1-1.554-.43L5.64 8.058a1.636 1.636 0 0 1-.43-1.554l.513-2.052a.636.636 0 0 0-.115-.544L3.925 1.745zM2.267.98a1.636 1.636 0 0 1 2.448.153l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
+                                                </svg> {{activeCustomer.phone}}</p>
+                                            <p class="card-text"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                                    class="bi bi-envelope" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                                                </svg> {{activeCustomer.email}}</p>
+                                        </div>
+                                    </gmap-info-window>
                                 </GmapMap>
-
-
                                 <div class="modal-footer">
                                     <div class="btn btn-danger mr-2" @click="showModalMap = false">Close</div>
                                 </div>
@@ -345,15 +353,7 @@
             </transition>
         </div>
 
-
-
-
     </div>
-
-
-
-
-
 
 </template>
 
@@ -480,26 +480,31 @@
 
 
     .modal-container {
-          position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 10%;
-  top: 10%;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        /* Full width */
+        height: 80%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
         background-color: rgb(230, 230, 230);
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif; 
+        font-family: Helvetica, Arial, sans-serif;
 
     }
 
-.modal-footer{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
+    .modal-footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 
 
     .modal-header h3 {
@@ -540,37 +545,37 @@
         transform: scale(1.1);
     }
 
- .btn-delete{
+    .btn-delete {
         background-color: #EFD6DE;
         transition: transform .3s;
     }
-.btn-delete:hover{
+
+    .btn-delete:hover {
         background-color: #ecacc0;
         transform: scale(1.1);
- }
+    }
 
-        .btn-modify{
+    .btn-modify {
         background-color: #8F8F8F;
-                transition: transform .3s;
+        transition: transform .3s;
 
     }
-    .btn-modify:hover{
-                background-color: #626262;
+
+    .btn-modify:hover {
+        background-color: #626262;
         transform: scale(1.1);
 
     }
 
-        .btn-show{
+    .btn-show {
         background-color: #73b2ff;
-                        transition: transform .3s;
+        transition: transform .3s;
 
     }
-    
-    .btn-show:hover{
-                background-color: #4d6d97;
+
+    .btn-show:hover {
+        background-color: #4d6d97;
         transform: scale(1.1);
 
     }
-
-
 </style>

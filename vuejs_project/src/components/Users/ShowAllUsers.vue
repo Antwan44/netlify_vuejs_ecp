@@ -9,11 +9,6 @@
                             <div class="col-sm-12">
                                 <h2 class="titre-admin">Manage Users</h2>
                             </div>
-                            <!-- <div class="col-sm-6 mt-2">
-
-      <input type="text" class="search mb-3 pl-3" placeholder="Search" v-model="search">
-
-                            </div> -->
                         </div>
                     </div>
                     <table class="table table-striped table-hover">
@@ -35,34 +30,34 @@
                                 <td>{{user.email}}</td>
                                 <td>{{user.phone}}</td>
                                 <td>
-                                        <button type="submit" class="delete btn btn-delete"
-                                            @click.prevent="ondelete(user.id)" name="delete_data_btn"><svg width="1em"
-                                                height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                            </svg></button>
+                                    <button type="submit" class="delete btn btn-delete"
+                                        @click.prevent="ondelete(user.id)" name="delete_data_btn"><svg width="1em"
+                                            height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                        </svg></button>
                                 </td>
                                 <td>
-                                        <button type="submit" class="edit btn btn-modify" name="modify_btn"
-                                            @click="showModalEdit = true, userSelected = user"><svg width="1em"
-                                                height="1em" viewBox="0 0 16 16" class="bi bi-pencil"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
-                                            </svg></button>
+                                    <button type="submit" class="edit btn btn-modify" name="modify_btn"
+                                        @click="showModalEdit = true, userSelected = user"><svg width="1em" height="1em"
+                                            viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                                            <path fill-rule="evenodd"
+                                                d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
+                                        </svg></button>
                                 </td>
                                 <td>
-                                        <button type="submit" class="edit btn btn-show" name="show_btn"
-                                            @click="showModalShow = true, userSelected = user"><svg width="1em"
-                                                height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                            </svg></button>
+                                    <button type="submit" class="edit btn btn-show" name="show_btn"
+                                        @click="showModalShow = true, userSelected = user"><svg width="1em" height="1em"
+                                            viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                        </svg></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -70,11 +65,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
 
         <!-- MODAL ADD
  -->
@@ -139,12 +129,8 @@
         </div>
 
 
-
-
         <!-- MODAL UPDATE
  -->
-
-
         <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalEdit" @close="showModalEdit = false">
                 <div class="modal-mask">
@@ -202,7 +188,6 @@
         <!-- MODAL SHOW
  -->
 
-
         <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalShow" @close="showModalShow = false">
                 <div class="modal-mask">
@@ -225,26 +210,7 @@
             </transition>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
 
 
 </template>
@@ -322,9 +288,9 @@
         },
         computed: {
             ...mapGetters(['getAllUsers', 'infoUserById', 'getNewUser', 'getEraseUser', 'getEditUser']),
-/*             filteredUser(){
-        return this.getAllUsers.filter(user => user.firstname.toLowerCase().includes(this.search.toLowerCase()));
-      } */
+            /*             filteredUser(){
+                    return this.getAllUsers.filter(user => user.firstname.toLowerCase().includes(this.search.toLowerCase()));
+                  } */
         },
         created() {
             this.fetchAllUsers();
@@ -352,26 +318,31 @@
 
 
     .modal-container {
-          position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 10%;
-  top: 10%;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        /* Full width */
+        height: 80%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
         background-color: rgb(230, 230, 230);
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif; 
+        font-family: Helvetica, Arial, sans-serif;
 
     }
 
-.modal-footer{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
+    .modal-footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 
 
     .modal-header h3 {
@@ -412,36 +383,37 @@
         transform: scale(1.1);
     }
 
- .btn-delete{
+    .btn-delete {
         background-color: #EFD6DE;
         transition: transform .3s;
     }
-.btn-delete:hover{
+
+    .btn-delete:hover {
         background-color: #ecacc0;
         transform: scale(1.1);
- }
+    }
 
-        .btn-modify{
+    .btn-modify {
         background-color: #8F8F8F;
-                transition: transform .3s;
+        transition: transform .3s;
 
     }
-    .btn-modify:hover{
-                background-color: #626262;
+
+    .btn-modify:hover {
+        background-color: #626262;
         transform: scale(1.1);
 
     }
 
-        .btn-show{
+    .btn-show {
         background-color: #73b2ff;
-                        transition: transform .3s;
+        transition: transform .3s;
 
     }
-    
-    .btn-show:hover{
-                background-color: #4d6d97;
+
+    .btn-show:hover {
+        background-color: #4d6d97;
         transform: scale(1.1);
 
     }
-
 </style>

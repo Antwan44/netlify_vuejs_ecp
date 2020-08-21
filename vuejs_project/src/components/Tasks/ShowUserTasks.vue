@@ -20,23 +20,18 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <tr v-for="task in getUserTasks" :key="task.id">
-
-
                                 <td>{{task.service}}</td>
                                 <td>{{task.customer.firstname}}<br>{{task.customer.lastname}}</td>
-                                
-
-                                
                                 <td>
-                                        <button class="show btn btn-show" name="show_btn" @click="showModalShow = true, taskSelected = task"><svg
-                                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                            </svg></button>
+                                    <button class="show btn btn-show" name="show_btn"
+                                        @click="showModalShow = true, taskSelected = task"><svg width="1em" height="1em"
+                                            viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                        </svg></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -46,32 +41,32 @@
         </div>
 
 
-
-<!-- MODAL SHOW
+        <!-- MODAL SHOW
  -->
 
- <div class="container-fluid" style="width : 98%;">
+        <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalShow" @close="showModalShow = false">
                 <div class="modal-mask">
                     <div class="modal-wrapper ">
                         <div class="modal-container">
-                                <div class="well">
-                                   <h4>{{taskSelected.service}}</h4>
-                                    <h6>Service start: {{taskSelected.start}}</h6>
-                                    <h6>Service end: {{taskSelected.end}}</h6>
-                                    <h6>Special Note: {{taskSelected.special_note}}</h6>
-                                    <h6>Customer Info: {{taskSelected.customer.firstname}} {{taskSelected.customer.Lastname}}
-                                        <br>
-                                        {{taskSelected.customer.email}}
-                                        <br>
-                                        {{taskSelected.customer.phone}}
-                                    </h6>
-                                    <h6>Employee Info: {{taskSelected.user.firstname}} {{taskSelected.user.Lastname}}
-                                        <br>
-                                        {{taskSelected.user.email}}
-                                        <br>
-                                        {{taskSelected.user.phone}}
-                                    </h6>
+                            <div class="well">
+                                <h4>{{taskSelected.service}}</h4>
+                                <h6>Service start: {{taskSelected.start}}</h6>
+                                <h6>Service end: {{taskSelected.end}}</h6>
+                                <h6>Special Note: {{taskSelected.special_note}}</h6>
+                                <h6>Customer Info: {{taskSelected.customer.firstname}}
+                                    {{taskSelected.customer.Lastname}}
+                                    <br>
+                                    {{taskSelected.customer.email}}
+                                    <br>
+                                    {{taskSelected.customer.phone}}
+                                </h6>
+                                <h6>Employee Info: {{taskSelected.user.firstname}} {{taskSelected.user.Lastname}}
+                                    <br>
+                                    {{taskSelected.user.email}}
+                                    <br>
+                                    {{taskSelected.user.phone}}
+                                </h6>
                                 <GmapMap
                                     :center="{lat: parseFloat(taskSelected.customer.lat), lng: parseFloat(taskSelected.customer.lng)}"
                                     :zoom="12" map-type-id="terrain" style="width: 100%; height: 300px">
@@ -79,14 +74,13 @@
                                         :position="{lat: parseFloat(taskSelected.customer.lat), lng: parseFloat(taskSelected.customer.lng)}"
                                         :clickable="true" :draggable="true" @click="center=m.position" />
                                 </GmapMap>
-
-<div class="modal-footer">
+                                <div class="modal-footer">
                                     <div class="btn btn-danger mr-2" @click="showModalShow = false">Close</div>
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
-                     </div>
+                </div>
             </transition>
         </div>
 
@@ -127,7 +121,7 @@
         created() {
             this.fetchUserTasks();
         },
-        
+
 
 
     }
@@ -151,26 +145,31 @@
 
 
     .modal-container {
-          position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 10%;
-  top: 10%;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        /* Full width */
+        height: 80%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
         background-color: rgb(230, 230, 230);
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif; 
+        font-family: Helvetica, Arial, sans-serif;
 
     }
 
-.modal-footer{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
+    .modal-footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 
 
     .modal-header h3 {
@@ -214,11 +213,12 @@
 
 
 
-        .btn-show{
+    .btn-show {
         background-color: #73b2ff;
     }
-    .btn-show:hover{
-                background-color: #4d6d97;
+
+    .btn-show:hover {
+        background-color: #4d6d97;
 
     }
 </style>

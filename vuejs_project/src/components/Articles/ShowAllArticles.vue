@@ -34,42 +34,39 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <tr v-for="article in getAllArticles.data" :key="article.id">
-
-
-
                                 <td>{{article.title}}</td>
                                 <td v-html="article.description"></td>
                                 <td>
-                                        <button class="delete btn btn-delete" @click.prevent="ondelete(article.id)"
-                                            name="delete_data_btn">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                                class="bi bi-trash-fill" fill="currentColor"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                            </svg>
-                                            </button>
+                                    <button class="delete btn btn-delete" @click.prevent="ondelete(article.id)"
+                                        name="delete_data_btn">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                        </svg>
+                                    </button>
                                 </td>
                                 <td>
-                                        <button class="edit btn btn-modify" name="modify_btn" @click="showModalEdit = true, articleSelected = article"><svg
-                                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
-                                            </svg></button>
+                                    <button class="edit btn btn-modify" name="modify_btn"
+                                        @click="showModalEdit = true, articleSelected = article"><svg width="1em"
+                                            height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                                            <path fill-rule="evenodd"
+                                                d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
+                                        </svg></button>
                                 </td>
                                 <td>
-                                        <button class="show btn btn-show" name="show_btn" @click="showModalShow = true, articleSelected = article"><svg
-                                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill"
-                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                            </svg></button>
+                                    <button class="show btn btn-show" name="show_btn"
+                                        @click="showModalShow = true, articleSelected = article"><svg width="1em"
+                                            height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                        </svg></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -79,7 +76,7 @@
         </div>
 
 
-<!-- MODAL ADD
+        <!-- MODAL ADD
  -->
         <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModal" @close="showModal = false">
@@ -93,28 +90,23 @@
                                         <input type="text" class="form-control" placeholder="Article title"
                                             v-model="title">
                                     </div>
-<!--                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Write Your Small Article"
-                                            v-model="description">
-                                    </div> -->
-                                        <vue-editor v-model="description" />
-
+                                    <vue-editor v-model="description" />
                                     <div class="btn btn-danger mr-2" @click="showModal = false">Close</div>
-                                    <button type="submit" class="btn btn-primary" @click="showModal = false"> Submit </button>
+                                    <button type="submit" class="btn btn-primary" @click="showModal = false"> Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                     </div>
+                </div>
             </transition>
         </div>
 
 
-<!-- MODAL UPDATE
+        <!-- MODAL UPDATE
  -->
 
-
- <div class="container-fluid" style="width : 98%;">
+        <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalEdit" @close="showModalEdit = false">
                 <div class="modal-mask">
                     <div class="modal-wrapper ">
@@ -123,46 +115,40 @@
                                 <div class="well">
                                     <h4>Edit Article</h4>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"
-                                            v-model="articleSelected.title">
+                                        <input type="text" class="form-control" v-model="articleSelected.title">
                                     </div>
-<!--                                     <div class="form-group">
-                                        <input type="text" class="form-control"
-                                            v-model="articleSelected.description">
-                                    </div> -->
-                                     <vue-editor v-model="articleSelected.description" />
-
+                                    <vue-editor v-model="articleSelected.description" />
                                     <div class="btn btn-danger mr-2" @click="showModalEdit = false">Close</div>
-                                    <button type="submit" class="btn btn-primary" @click="showModalEdit = false"> Submit </button>
+                                    <button type="submit" class="btn btn-primary" @click="showModalEdit = false"> Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                     </div>
+                </div>
             </transition>
         </div>
 
 
-<!-- MODAL SHOW
+        <!-- MODAL SHOW
  -->
 
 
- <div class="container-fluid" style="width : 98%;">
+        <div class="container-fluid" style="width : 98%;">
             <transition name="modal" v-if="showModalShow" @close="showModalShow = false">
                 <div class="modal-mask">
                     <div class="modal-wrapper ">
                         <div class="modal-container">
-                                <div class="well">
-                                   <h4>{{ articleSelected.title}}</h4>
-                                    <h6 v-html="articleSelected.description"></h6>
-
-<div class="modal-footer">
+                            <div class="well">
+                                <h4>{{ articleSelected.title}}</h4>
+                                <h6 v-html="articleSelected.description"></h6>
+                                <div class="modal-footer">
                                     <div class="btn btn-danger mr-2" @click="showModalShow = false">Close</div>
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
-                     </div>
+                </div>
             </transition>
         </div>
 
@@ -170,15 +156,12 @@
     </div>
 
 
-
-
-
-
-
 </template>
 
 <script>
-import { VueEditor } from "vue2-editor";
+    import {
+        VueEditor
+    } from "vue2-editor";
     import {
         mapGetters,
         mapActions,
@@ -186,7 +169,9 @@ import { VueEditor } from "vue2-editor";
 
     export default {
         name: "ShowAllArticles",
-        components: { VueEditor },
+        components: {
+            VueEditor
+        },
         data() {
             return {
                 title: '',
@@ -215,12 +200,12 @@ import { VueEditor } from "vue2-editor";
                 this.DeleteArticle(id);
                 this.fetchAllArticles();
             },
-            oneditArticle(article){
-                 var obj = {
+            oneditArticle(article) {
+                var obj = {
                     'id': article.id,
                     'title': article.title,
                     'description': article.description,
-            }
+                }
                 this.fetchAllArticles();
                 this.updateArticle(obj);
                 this.fetchAllArticles();
@@ -235,7 +220,7 @@ import { VueEditor } from "vue2-editor";
         created() {
             this.fetchAllArticles();
         },
-        
+
 
 
     }
@@ -259,26 +244,31 @@ import { VueEditor } from "vue2-editor";
 
 
     .modal-container {
-          position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 10%;
-  top: 10%;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        /* Full width */
+        height: 80%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
         background-color: rgb(230, 230, 230);
         border-radius: 2px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
         transition: all 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif; 
+        font-family: Helvetica, Arial, sans-serif;
 
     }
 
-.modal-footer{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
+    .modal-footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 
 
     .modal-header h3 {
@@ -319,34 +309,36 @@ import { VueEditor } from "vue2-editor";
         transform: scale(1.1);
     }
 
- .btn-delete{
+    .btn-delete {
         background-color: #EFD6DE;
         transition: transform .3s;
     }
-.btn-delete:hover{
+
+    .btn-delete:hover {
         background-color: #ecacc0;
         transform: scale(1.1);
- }
+    }
 
-        .btn-modify{
+    .btn-modify {
         background-color: #8F8F8F;
-                transition: transform .3s;
+        transition: transform .3s;
 
     }
-    .btn-modify:hover{
-                background-color: #626262;
+
+    .btn-modify:hover {
+        background-color: #626262;
         transform: scale(1.1);
 
     }
 
-        .btn-show{
+    .btn-show {
         background-color: #73b2ff;
-                        transition: transform .3s;
+        transition: transform .3s;
 
     }
 
-    .btn-show:hover{
-                background-color: #4d6d97;
+    .btn-show:hover {
+        background-color: #4d6d97;
         transform: scale(1.1);
 
     }
