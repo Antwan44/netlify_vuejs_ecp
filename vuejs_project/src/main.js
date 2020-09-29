@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import * as VueGoogleMaps from 'vue2-google-maps'
-import googleKey from 'googleKey'
 
 Vue.config.productionTip = false
 
@@ -24,7 +23,7 @@ router.beforeEach((to, from, next) => {
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: googleKey.KEY,
+    key: process.env.KEY,
     libraries: 'places', // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
