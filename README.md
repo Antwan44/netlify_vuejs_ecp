@@ -1,2 +1,2 @@
 # netlify_vuejs_ecp
-Front final project Antoine Hardy
+Front-end in vue.js for Epitech Dev&Go final project Antoine Hardy.
